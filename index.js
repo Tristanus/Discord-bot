@@ -5,7 +5,6 @@ const prefix = "!";
 
 bot.on("message", (message) => {
     if(message.author.bot) return;
-    if(!message.content.startsWith(prefix)) return;
 
     let command = message.content.split(" ")[0];
     command = command.slice(prefix.length);
@@ -21,6 +20,10 @@ bot.on("message", (message) => {
         let total = numArray.reduce( (p, c) => p+c);
 
         message.channel.sendMessage(total);
+    }
+
+    if(message.content == "ayy"){
+        message.channel.sendMessage("lmao");
     }
 
     if(command === "hoang"){
