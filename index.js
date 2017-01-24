@@ -18,7 +18,7 @@ bot.on("message", (message) => {
 
     //tekst output
 
-    if(command === "say"){
+    if(command == "say"){
         message.channel.sendMessage(args.join(" "));
     }
 
@@ -26,41 +26,41 @@ bot.on("message", (message) => {
         message.channel.sendMessage("lmao");
     }
 
-    if(command === "hoang"){
+    if(command == "hoang"){
         message.channel.sendMessage("Loempiavouwer");
     }
 
-    if(command === "david"){
+    if(command == "david"){
         message.channel.sendMessage("Embrace the weeb");
     }
 
-    if(command === "tycho"){
+    if(command == "tycho"){
         message.channel.sendMessage("YO!");
     }
 
-    if(command === "trung"){
-        message.channel.sendMessage("oh shit!");
+    if(command == "trung"){
+        message.channel.sendMessage("Oh shit!");
     }
 
-    if(command === "tim"){
-        message.channel.sendMessage("Gijsbert");
+    if(command == "tim"){
+        message.channel.sendMessage("Wannabefinlando");
     }
 
     // functional output
 
-    if(command === "add"){
+    if(command == "add"){
         let numArray = args.map(n=> parseInt(n));
         let total = numArray.reduce( (p, c) => p+c);
 
         message.channel.sendMessage(total);
     }
 
-    if (command === "kick"){
+    if (command == "kick"){
       let modRole = message.guild.roles.find("name", "temp. Admin");
       if(!message.member.roles.has(modRole.id)){
           return message.reply("Hier heb jij helemaal geen toestemming voor!");
       }
-      if(message.mentions.users.size === 0){
+      if(message.mentions.users.size == 0){
         return message.reply("Geef wel een naam mee om te kicken.");
       }
       let kickMember = message.guild.member(message.mentions.users.first());
@@ -75,12 +75,12 @@ bot.on("message", (message) => {
       });
     }
 
-    if (command === "ban"){
+    if (command == "ban"){
       let modRole = message.guild.roles.find("name", "temp. Admin");
       if(!message.member.roles.has(modRole.id)){
           return message.reply("Hier heb jij helemaal geen toestemming voor!");
       }
-      if(message.mentions.users.size === 0){
+      if(message.mentions.users.size == 0){
         return message.reply("Geef wel een naam mee om te bannen.");
       }
       let banMember = message.guild.member(message.mentions.users.first());
@@ -97,20 +97,24 @@ bot.on("message", (message) => {
 
     // visual output
 
-    if(command === "test"){
+    if(command == "test"){
       message.channel.sendMessage("https://i.ytimg.com/vi/eOXrHqfmuSQ/hqdefault.jpg");
     }
 
-    if(command === "ripHoang"){
+    if(command == "ripHoang"){
       message.channel.sendMessage("https://i.ytimg.com/vi/JbNUTcZbFug/maxresdefault.jpg");
     }
 
-    if(command === "stfu"){
+    if(command == "stfu"){
       message.channel.sendMessage("https://www.youtube.com/watch?v=OLpeX4RRo28");
     }
 
-    if(command === "yeet"){
+    if(command == "yeet"){
       message.channel.sendMessage("http://imgur.com/gallery/bMajELQ");
+    }
+
+    if(command == "gijsbert"){
+      message.channel.sendMessage("https://33.media.tumblr.com/6fccce30fc8d0eb3cf3a9d7b1f86c888/tumblr_inline_nwzxlhNZQd1s89x2i_500.gif");
     }
 });
 
